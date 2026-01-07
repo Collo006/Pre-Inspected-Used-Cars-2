@@ -1,0 +1,25 @@
+
+
+@import "tailwindcss";
+@tailwind utilities;
+
+
+@theme{
+--color-skyBlue: #4DB7FF;
+--color-darkSky: #1B85D6;
+--color-lightSky: #E2F5FF;
+
+--color-navyBlue: #0A2A43;
+--color-newOrange: #FF8300;
+
+--color-white: #FFFFFF;
+--color-lightGray: #F2F2F2;
+--color-mediumGray: #333333;
+
+
+}
+
+#image-blur-fade{
+    mask-image: linear-gradient(to top,black 70%,transparent 100%);
+    -webkit-mask-image: linear-gradient(to top,black 70%, transparent 100%);
+}

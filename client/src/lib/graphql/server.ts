@@ -6,6 +6,7 @@ import { typeDefs } from './schema';
 import { NextRequest } from 'next/server';
 import { resolvers } from './resolvers';
 
+//boiler plate
 const server = new ApolloServer({
   typeDefs,
   resolvers,

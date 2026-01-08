@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@apollo/client": "^4.0.7",
-    "@apollo/server": "^4.9.3",
+    "@apollo/server": "^5.0.0",
     "@as-integrations/next": "^4.1.0",
     "@prisma/client": "^6.19.1",
     "@tanstack/react-query": "^5.90.12",

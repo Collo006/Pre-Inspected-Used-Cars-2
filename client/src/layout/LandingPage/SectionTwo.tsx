@@ -1,28 +1,20 @@
 import { SpecialCarDealData } from "@/interfaces";
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
-import { Josefin_Sans,  Exo_2,  } from "next/font/google";
+import { Josefin_Sans, Exo_2 } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
+const josefinFont = Josefin_Sans({
+  subsets: ["latin"],
+  weight: "300",
+});
 
-
-const josefinFont= Josefin_Sans({
-  subsets:["latin"],
-  weight:"300",
-
-})
-
-
-const exoFont= Exo_2({
-  subsets:["latin"],
-  weight:"500",
-
-})
-
-
-
+const exoFont = Exo_2({
+  subsets: ["latin"],
+  weight: "500",
+});
 
 const SPECIAL_CARS = gql`
   query SpecialCarsQuery {
@@ -41,8 +33,28 @@ export default function SectionTwo() {
   const { data, error, loading } = useQuery<SpecialCarDealData>(SPECIAL_CARS);
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const carsPerSlide = 5;
+  const [carsPerSlide, setCarsPerSlide] = useState(1); // Start with mobile value
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Function to update cars per slide based on screen size
+  useEffect(() => {
+    const updateScreenSize = () => {
+      const mobile = window.innerWidth <= 640;
+      setIsMobile(mobile);
+      setCarsPerSlide(mobile ? 1 : 5);
+    };
+
+    // Initial update
+    updateScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateScreenSize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", updateScreenSize);
+  }, []);
+
+  // Calculate total slides AFTER carsPerSlide is determined
   const totalSlides = data?.special_car_deals?.length
     ? Math.ceil(data.special_car_deals.length / carsPerSlide)
     : 1;
@@ -57,20 +69,10 @@ export default function SectionTwo() {
     });
   }, [currentSlide, totalSlides, data]);
 
-  /*useEffect(() => {
-    if (!data?.special_car_deals) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 100000);
-    return () => clearInterval(interval);
-  }, [data, totalSlides]);*/
-
   if (loading) return <p className="text-center py-10">Loading cars...</p>;
   if (error)
     return (
-      <p className="text-center py-10 text-red-600">
-        Error: {error.message}
-      </p>
+      <p className="text-center py-10 text-red-600">Error: {error.message}</p>
     );
   if (!data?.special_car_deals?.length)
     return <p className="text-center py-10">No car data available</p>;
@@ -83,13 +85,15 @@ export default function SectionTwo() {
   return (
     <div className="mt-5 sm:ml-10 ml-0 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
       <section className="max-w-7xl mx-auto px-4 ">
-        <h1 className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}>
+        <h1
+          className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}
+        >
           SPECIAL CAR DEALS
         </h1>
       </section>
 
       {/* Full-screen scrollable area */}
-      <div className="relative w-screen  left-1/2  right-1/2 sm:-mx-[50vw] -mx-[55vw]">
+      <div className="relative w-screen left-1/2 right-1/2 sm:-mx-[50vw] -mx-[55vw]">
         {/* Arrows */}
         <button
           onClick={prevSlide}
@@ -129,8 +133,11 @@ export default function SectionTwo() {
           </svg>
         </button>
 
-        {/*  Edge-to-edge full-width container */}
-        <div ref={scrollContainerRef} className="overflow-hidden w-full"> 
+        {/* Edge-to-edge full-width container */}
+        <div
+          ref={scrollContainerRef}
+          className="overflow-hidden w-full px-4 sm:px-0"
+        >
           <div className="flex w-full">
             {Array.from({ length: totalSlides }).map((_, slideIndex) => {
               const carsForThisSlide = data.special_car_deals.slice(
@@ -141,37 +148,43 @@ export default function SectionTwo() {
               return (
                 <div
                   key={slideIndex}
-                  className="shrink-0  w-full  flex gap-4 px-6"
+                  className={`shrink-0 w-full ${isMobile ? 'flex justify-center' : 'flex justify-center gap-4'} px-2 sm:px-6`}
                   style={{ flex: "0 0 100%" }}
                 >
                   {carsForThisSlide.map((car) => (
                     <div
                       key={car.id}
-                      className="bg-lightSky sm:ml-0 curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[350px] "
+                      className={`bg-lightSky cursor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 ${isMobile ? 'w-full max-w-[350px]' : 'sm:w-[20%] sm:min-w-[200px] max-w-[350px]'} mx-auto`}
                     >
                       <Link key={car.id} href={`/SpecialCars/${car.id}`}>
-                      <div className="relative h-52 ">
-                        <Image
-                          src={car.image}
-                          alt={car.model}
-                          fill
-                          className="object-cover"
-                        />
-                      </div> 
+                        <div className="relative h-52 ">
+                          <Image
+                            src={car.image}
+                            alt={car.model}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                       </Link>
                       <div className="p-4 text-center">
-                        <h3 className={`text-lg mb-2 text-navyBlue text-bold ${josefinFont}`}>
+                        <h3
+                          className={`text-lg mb-2 text-navyBlue text-bold ${josefinFont}`}
+                        >
                           {car.model}
                         </h3>
-                        <div className={`space-y-1 text-sm text-navyBlue ${josefinFont}`}>
+                        <div
+                          className={`space-y-1 text-sm text-navyBlue ${josefinFont}`}
+                        >
                           <p>Year: {car.year}</p>
                           <p>Mileage: {car.mileage.toLocaleString()} miles</p>
-                          <p className={`text-lg font-bold text-navyBlue ${josefinFont}`}>  Ksh.{car.price.toLocaleString()}
+                          <p
+                            className={`text-lg font-bold text-navyBlue ${josefinFont}`}
+                          >
+                            Ksh.{car.price.toLocaleString()}
                           </p>
                         </div>
                       </div>
                     </div>
-                 
                   ))}
                 </div>
               );
@@ -195,49 +208,6 @@ export default function SectionTwo() {
           />
         ))}
       </section>
-      
-   {/*   <section className=" mt-10 h-auto">
-          <div className="grid grid-cols-2 ">
-           <div className=" rounded-xl mt-2 ml-2 h-[700px] w-[500px]">
-                          <div className="relative h-[700px] w-[500px]">
-            <Image src="/images/keys-1.jpg" alt="Keys" fill   className="rounded-xl object-cover" />
-             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center ">
-             <p className="text-5xl pt-20 text-black"></p>
-             </div>
-            </div>
-           </div>
-           <div className=" grid grid-rows-2 -ml-80">
-            <div className=" grid grid-cols-2 mt-2 ">
-            <div className="h-[300px] w-[600px] rounded-xl " >
-                          <div className="relative h-[300px] w-[600px]">
-            <Image src="/images/handing-docs.jpg" alt="Keys" fill   className="rounded-xl object-cover" />
-             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center ">
-             <p className="text-5xl pt-20 text-black"></p>
-             </div>
-            </div>
-
-            </div>
-            <div className="h-[300px] w-[550px] rounded-xl ml-7 ">
-                           <div className="relative h-[300px] w-[550px]">
-            <Image src="/images/motocycles.jpg" alt="Keys" fill  className="rounded-xl object-cover" />
-             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center ">
-             <p className="text-5xl pt-20 text-black"></p>
-             </div>
-            </div>
-            </div>
-           </div>
-           <div className=" h-[394px] w-full  -mt-10 -ml-1 rounded-xl">
-                   <div className="relative h-[394px] w-full">
-            <Image src="/images/customer.jpeg" alt="Keys" fill  className="rounded-xl object-cover " />
-             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center ">
-             <p className="text-5xl pt-20 text-black"></p>
-             </div>
-            </div>
-
-           </div>
-           </div>
-          </div>
-        </section>*/}
     </div>
   );
 }

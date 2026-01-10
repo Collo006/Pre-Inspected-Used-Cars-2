@@ -81,7 +81,7 @@ export default function SectionTwo() {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <div className="mt-5 ml-1 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
+    <div className="mt-5 sm:ml-10 ml-1 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
       <section className="max-w-7xl mx-auto px-4 ">
         <h1 className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}>
           SPECIAL CAR DEALS
@@ -89,7 +89,7 @@ export default function SectionTwo() {
       </section>
 
       {/* Full-screen scrollable area */}
-      <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
+      <div className="relative w-screen left-1/2  right-1/2 sm:-mx-[50vw] -mx-[55vw]">
         {/* Arrows */}
         <button
           onClick={prevSlide}
@@ -130,7 +130,7 @@ export default function SectionTwo() {
         </button>
 
         {/*  Edge-to-edge full-width container */}
-        <div ref={scrollContainerRef} className="overflow-hidden w-full">
+        <div ref={scrollContainerRef} className="overflow-hidden w-full"> 
           <div className="flex w-full">
             {Array.from({ length: totalSlides }).map((_, slideIndex) => {
               const carsForThisSlide = data.special_car_deals.slice(
@@ -147,7 +147,7 @@ export default function SectionTwo() {
                   {carsForThisSlide.map((car) => (
                     <div
                       key={car.id}
-                      className="bg-lightSky curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 w-[20%] min-w-[200px]"
+                      className="bg-lightSky curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[350px]"
                     >
                       <Link key={car.id} href={`/SpecialCars/${car.id}`}>
                       <div className="relative h-52">

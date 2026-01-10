@@ -71,14 +71,14 @@ const prevSlide=()=> setCurrentSlide((prev)=> (prev-1 + totalSlides)% totalSlide
 const goToSlide = (index:number) => setCurrentSlide(index);
 
 return(
-    <div className="mt-5 ml-10 py-10 bg-white w-[1600px] rounded-xl" >
+    <div className="mt-5 sm:ml-10 ml-1 py-10 bg-white sm:w-[1600px] w-full rounded-xl" >
         <section className="max-w-7xl mx-auto px-4">
-          <h1 className={`text-5xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}>
+          <h1 className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}>
             SUVs and PICKUPS
           </h1>
         </section>
        {/** scrollable area */} 
-       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
+       <div className="relative w-screen left-1/2 right-1/2 sm:-mx-[50vw] -mx-[55vw]">
         {/** Arrows */}
         <button onClick={prevSlide} className="absolute left-4 top-1/2 transform-translate-y-1/2 bg-lightSky rounded-full p-3 shadow-lg hover:bg-skyBlue z-10 transition cursor-pointer">
         <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ return(
                 <div key={slideIndex} className="shrink-0 w-full flex gap-4 px-6" style={{flex: "0 0 100%"}}>
                     {carsForThisSlide.map((car)=>(
                        
-                        <div key={car.id}  className="bg-lightSky rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 w-[20%] min-w-[200px]">
+                        <div key={car.id}  className="bg-lightSky rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[350px] curosor-pointer">
                         <Link key={car.id} href={`/SUVPickup/${car.id}`}>
                         <div className="relative h-52">
                         <Image src={car.image} alt={car.model} fill className="object-cover"/>

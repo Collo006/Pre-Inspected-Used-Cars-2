@@ -66,63 +66,63 @@ export default function SectionOne() {
   return (
     <div>
       <div className={`mt-5 text-center text-2xl`}>
-        <h1  className={`${exoFont.className} text-4xl text-darkSky `}>NEW ARRIVALS</h1>
+        <h1  className={`${exoFont.className} sm:text-4xl text-darkSky  `}>NEW ARRIVALS</h1>
         <p className={`${sairaFont.className} text-darkSky`}>Find Newly Posted Cars from approved sellers</p>
       </div>
       
       <section className="mt-2 w-full flex justify-center">
-        <div className="relative w-full h-[400px] overflow-hidden">
+        <div className="relative sm:w-full w-[400px] h-[400px] overflow-hidden ">
           {/* Sliding container */}
           <div 
             className="flex transition-transform duration-1000 ease-in-out h-full"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {data.newarrivals.map((car) => (
-              <div key={car.id} className="shrink-0 w-full grid grid-cols-2">
+              <div key={car.id} className="sm:shrink-0  w-full sm:grid sm:grid-cols-2 ">
                 {/* Left image */}
                 <Link key={car.id} href={`/newCars/${car.id}`}>
-                <div className="relative w-full h-full ml-24">
+                <div className="relative sm:w-full w-[400px] h-[200px] sm:h-full sm:ml-24 ">
                   <Image 
                     src={car.image} 
                     alt={car.model} 
-                    fill 
-                    className="object-cover rounded-xl pl-1"
+                    fill
+                    className="object-cover sm:rounded-xl sm:pl-1 pl-0"
               
                   />
                 </div>
                 </Link>
                 
                 {/* Right Details */}
-                <div className={`flex flex-col justify-center pl-6 w-[600px] ml-28 rounded-xl bg-white text-darkSky h-full ${josefinFont.className}`}>
-                  <div className="-mt-20 text-center">
-                    <p className="text-center text-xl font-extrabold w-auto ">Price</p>
+                <div className={`flex flex-col justify-center sm:pl-6 pl-0 sm:w-[600px] w-[400px] sm:ml-28 sm:rounded-xl  text-darkSky h-full ${josefinFont.className}`}>
+                  <div className="sm:-mt-20 -mt-46 -ml-6 text-center ">
+                    <p className="text-center text-2xl font-extrabold w-auto ">Price</p>
                     <p className="text-center">
-                      <span className="text-6xl font-extrabold">KSH.{car.price}</span>
+                      <span className="sm:text-6xl text-xl font-extrabold">KSH.{car.price}</span>
                     </p>
                   </div>
                   
-                  <div className="grid  grid-cols-2  pl-10 ml-7 mt-5 gap-2 ">
-                    <div className=" h-[100px] text-center rounded-xl pt-5 bg-navyBlue">
+                  <div className="grid  grid-cols-2  sm:pl-10 pl-10 sm:ml-7 sm:mt-5 mt-1 gap-2 ">
+                    <div className=" h-[50px] sm:h-[100px] text-center rounded-xl sm:pt-5 pt-0 bg-navyBlue">
                       <p className="text-lg w-auto pl-1 ">Model</p>
-                      <p><span className="text-4xl font-extrabold">{car.model}</span></p>
+                      <p><span className="sm:text-4xl text-lg font-extrabold">{car.model}</span></p>
                     </div>
                     
-                    <div className=" w-[150px] text-center rounded-xl pt-5 bg-navyBlue">
-                      <p className="text-lg w-auto pl-1">Year</p>
+                    <div className=" sm:w-[150px] w-[70px] text-center rounded-xl sm:pt-5 bg-navyBlue">
+                      <p className="sm:text-lg text-md w-auto pl-1">Year</p>
                       <p className="pl-1">
-                        <span className="text-2xl">{car.year}</span>
+                        <span className="sm:text-2xl text-lg">{car.year}</span>
                       </p>
                     </div>
                     
-                    <div className="w-[150px] text-center rounded-xl bg-navyBlue">
-                      <p className="text-lg w-auto pt-1 pl-1 ">Engine Size</p>
-                      <p><span className="text-3xl ">{car.engine_size}</span></p>
+                    <div className="w-[150px] sm:h-[100px] h-[50px] text-center rounded-xl bg-navyBlue">
+                      <p className="sm:text-lg md w-auto pt-1 pl-1 ">Engine <span className={`hidden sm:inline`}>Size</span></p>
+                      <p><span className="sm:text-3xl text-md">{car.engine_size}</span></p>
                     </div>
                     
-                    <div className=" -ml-24 w-[247px] text-center rounded-xl bg-navyBlue">
-                      <p className="pl-1 text-lg w-auto pt-1">Milage</p>
+                    <div className=" sm:-ml-24 -ml-7 sm:w-[247px] w-[100px] text-center rounded-xl bg-navyBlue">
+                      <p className="pl-1 sm:text-lg text-md w-auto pt-1">Milage</p>
                       <p className="pl-1">
-                        <span className="text-4xl font-extrabold">{car.mileage}</span>
+                        <span className="sm:text-4xl text-md font-extrabold">{car.mileage}</span>
                       </p>
                     </div>
                   </div>

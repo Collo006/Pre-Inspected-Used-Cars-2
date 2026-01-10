@@ -141,13 +141,13 @@ export default function SectionTwo() {
               return (
                 <div
                   key={slideIndex}
-                  className="shrink-0 w-full  flex gap-4 px-6"
+                  className="shrink-0  w-full  flex gap-4 px-12"
                   style={{ flex: "0 0 100%" }}
                 >
                   {carsForThisSlide.map((car) => (
                     <div
                       key={car.id}
-                      className="bg-lightSky -ml-1.5 sm:ml-0 curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[350px] "
+                      className="bg-green-700 sm:ml-0 curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[300px] "
                     >
                       <Link key={car.id} href={`/SpecialCars/${car.id}`}>
                       <div className="relative h-52 ">

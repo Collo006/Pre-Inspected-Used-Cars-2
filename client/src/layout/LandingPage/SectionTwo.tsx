@@ -147,7 +147,7 @@ export default function SectionTwo() {
                   {carsForThisSlide.map((car) => (
                     <div
                       key={car.id}
-                      className="bg-lightSky curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[350px]"
+                      className="bg-lightSky curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] w-[10%] sm:min-w-[200px] min-w-[350px]"
                     >
                       <Link key={car.id} href={`/SpecialCars/${car.id}`}>
                       <div className="relative h-52">

@@ -81,7 +81,7 @@ export default function SectionTwo() {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <div className="mt-5 sm:ml-10 ml-3 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
+    <div className="mt-5 sm:ml-10 ml-0 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
       <section className="max-w-7xl mx-auto px-4 ">
         <h1 className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}>
           SPECIAL CAR DEALS

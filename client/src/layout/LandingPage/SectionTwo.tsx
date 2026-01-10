@@ -81,7 +81,7 @@ export default function SectionTwo() {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <div className="mt-5 sm:ml-10 ml-1 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
+    <div className="mt-5 sm:ml-10 ml-0 py-10 bg-red-600 sm:w-[1600px] w-full rounded-xl">
       <section className="max-w-7xl mx-auto px-4 ">
         <h1 className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}>
           SPECIAL CAR DEALS
@@ -89,7 +89,7 @@ export default function SectionTwo() {
       </section>
 
       {/* Full-screen scrollable area */}
-      <div className="relative w-screen left-1/2  right-1/2 sm:-mx-[50vw] -mx-[55vw]">
+      <div className="relative w-screen  left-1/2  right-1/2 sm:-mx-[50vw] -mx-[55vw]">
         {/* Arrows */}
         <button
           onClick={prevSlide}
@@ -141,25 +141,25 @@ export default function SectionTwo() {
               return (
                 <div
                   key={slideIndex}
-                  className="shrink-0 w-full flex gap-4 px-6"
+                  className="shrink-0 w-full  flex gap-4 px-6"
                   style={{ flex: "0 0 100%" }}
                 >
                   {carsForThisSlide.map((car) => (
                     <div
                       key={car.id}
-                      className="bg-lightSky curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%]  sm:min-w-[200px] min-w-[350px]"
+                      className="bg-lightSky -ml-1.5 sm:ml-0 curosor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 sm:w-[20%] sm:min-w-[200px] min-w-[350px] "
                     >
                       <Link key={car.id} href={`/SpecialCars/${car.id}`}>
-                      <div className="relative h-52">
+                      <div className="relative h-52 ">
                         <Image
                           src={car.image}
                           alt={car.model}
                           fill
                           className="object-cover"
                         />
-                      </div>
+                      </div> 
                       </Link>
-                      <div className="p-4">
+                      <div className="p-4 text-center">
                         <h3 className={`text-lg mb-2 text-navyBlue text-bold ${josefinFont}`}>
                           {car.model}
                         </h3>

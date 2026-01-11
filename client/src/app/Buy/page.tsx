@@ -113,13 +113,13 @@ const filteredCars = data.cars.filter((car)=>{
 
         </div>
 
-            <div className="bg-white  rounded-lg sm:grid sm:grid-cols-[1fr_1fr_1fr] grid grid-cols-1 pt-5 pb-5 pl-2">
+            <div className="bg-white  rounded-lg sm:grid sm:grid-cols-[1fr_1fr_1fr] grid grid-cols-1 pt-5 pb-5 pl-2 justify-items-center">
               {filteredCars.length === 0 && (
                 <p>No cars match your filters</p>
               )}
                 {filteredCars.map((car)=>(
                  
-                    <div  key={car.id} className={`bg-lightSky shadow-md rounded-lg sm:w-[20%] sm:min-w-[330px] w-[350px] sm:h-[330px] mb-5 cursor-pointer overflow-hidden  hover:shadow-lg transition duration-300 items-center` }>
+                    <div  key={car.id} className={`bg-lightSky shadow-md rounded-lg sm:w-[20%] sm:min-w-[330px] w-[350px] sm:h-[330px] mb-5 cursor-pointer overflow-hidden  hover:shadow-lg transition duration-300` }>
                         <Link key={car.id} href={`/cars/${car.id}`}>
                          <div className={`relative h-50`}>
                           <Image src={car.image} alt={car.model} fill className={`object-cover rounded-t-lg`}/>

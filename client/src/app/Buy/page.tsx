@@ -69,15 +69,15 @@ const filteredCars = data.cars.filter((car)=>{
 });
 
     return (
-        <div>
+        <div className="w-screen">
             <div className="bg-white">
             <Header></Header>
             </div>
-            <div className={`mt-5 text-center text-2xl`}>
-                <h1 className={`${sairaFont.className} text-darkSky pl-46`}> Select Your Best Ride </h1>
+            <div className={`mt-5 text-center sm:text-2xl text-lg`}>
+                <h1 className={`${sairaFont.className} text-darkSky sm:pl-46`}> Select Your Best Ride </h1>
             </div>
-        <div className=" grid grid-cols-[300px_2fr] px-10 gap-2" >
-            <div className="bg-white rounded-lg h-[900px]  pt-5">
+        <div className=" sm:grid sm:grid-cols-[300px_2fr] sm:px-1 sm:gap-2" >
+            <div className="bg-white rounded-lg h-[900px] sm:block hidden  pt-5">
 
      {/** Search */}
           <input type="text" placeholder="Search model..." value={search}  className={`${sairaSmallFont.className} bg-lightSky text-navyBlue rounded-lg ml-1 pl-2 w-[290px] h-[50px] `} onChange={(e)=>setSearch(e.target.value)}/>
@@ -113,13 +113,13 @@ const filteredCars = data.cars.filter((car)=>{
 
         </div>
 
-            <div className="bg-white  rounded-lg grid grid-cols-3  pt-5 pb-5 pl-8">
+            <div className="bg-white  rounded-lg sm:grid sm:grid-cols-[1fr_1fr_1fr] grid grid-cols-1 pt-5 pb-5 pl-2">
               {filteredCars.length === 0 && (
                 <p>No cars match your filters</p>
               )}
                 {filteredCars.map((car)=>(
                  
-                    <div  key={car.id} className={`bg-lightSky shadow-md rounded-lg w-[20%] min-w-[400px] h-[330px] mb-5 cursor-pointer overflow-hidden  hover:shadow-lg transition duration-300` }>
+                    <div  key={car.id} className={`bg-lightSky shadow-md rounded-lg sm:w-[20%] sm:min-w-[330px] w-[250px] sm:h-[330px] mb-5 cursor-pointer overflow-hidden  hover:shadow-lg transition duration-300` }>
                         <Link key={car.id} href={`/cars/${car.id}`}>
                          <div className={`relative h-50`}>
                           <Image src={car.image} alt={car.model} fill className={`object-cover rounded-t-lg`}/>

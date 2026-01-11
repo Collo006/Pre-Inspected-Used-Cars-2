@@ -77,14 +77,14 @@ const filteredCars = data.cars.filter((car)=>{
                 <h1 className={`${sairaFont.className} text-darkSky sm:pl-46`}> Select Your Best Ride </h1>
             </div>
         <div className=" sm:grid sm:grid-cols-[300px_2fr] sm:px-1 sm:gap-2" >
-            <div className="bg-white rounded-lg h-[900px] sm:block hidden  pt-5">
+            <div className="bg-white rounded-lg sm:h-[900px] flex justify-center items-center sm:block h-auto pt-5">
 
      {/** Search */}
-          <input type="text" placeholder="Search model..." value={search}  className={`${sairaSmallFont.className} bg-lightSky text-navyBlue rounded-lg ml-1 pl-2 w-[290px] h-[50px] `} onChange={(e)=>setSearch(e.target.value)}/>
+          <input type="text" placeholder="Search model..." value={search}  className={` ${sairaSmallFont.className} bg-lightSky text-navyBlue rounded-lg sm:ml-1 pl-2 w-[290px] h-[50px] `} onChange={(e)=>setSearch(e.target.value)}/>
   
-    <div className={`mt-5 ml-1`}>
+    <div className={`sm:block hidden mt-5 ml-1`}>
     {/*Model*/}
-    <div className="w-full border border-lightGray"></div>
+    <div className=" w-full border border-lightGray"></div>
     <select className={`${sairaSmallFont.className} mt-2 mb-2 w-[290px]  `} value={selectedModel} onChange={(e)=>setSelectedModel(e.target.value)}>
        <option value="" className={` text-navyBlue bg-lightSky`}> All Models</option>
        {(models.map((model)=>

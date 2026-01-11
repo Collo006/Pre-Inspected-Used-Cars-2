@@ -37,7 +37,7 @@ export default function About(){
                 </div> 
                 <div className={`sm:ml-1 sm:mr-1 w-screen sm:h-[600px]  sm:rounded-xl mt-10 sm:grid sm:grid-cols-[1fr_2fr] sm:gap-1 grid grid-cols-1`}>
                       <div className={` w-full `}>
-                        <div className={`relative sm:mx-auto w-full sm:min-w-[400px] sm:h-[600px] h-[300px]`}>
+                        <div className={`relative sm:mx-auto w-full sm:min-w-[400px] sm:h-[600px] h-[400px]`}>
                     <Image src="/images/people.jpg" alt="Background" className={`sm:rounded-xl object-cover `} fill />
                         </div>
 

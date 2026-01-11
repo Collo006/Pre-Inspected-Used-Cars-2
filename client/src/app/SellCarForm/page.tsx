@@ -14,7 +14,7 @@ export default function SellCarFormPage(){
                 
             <div className={`bg-white ml-0 w-screen  `}>
                 <h1 className={`text-center mt-5 pt-5 text-navyBlue`}>SELL YOUR CAR ACROSS KENYA</h1>
-                <div className={` mt-5 pb-10 sm:grid sm:grid-cols-[repeat(3,300px)] gap-2 justify-center`}> {/** remember this shortcut */}
+                <div className={` mt-5 pb-10 sm:grid sm:grid-cols-[repeat(3,300px)] grid grid-cols-[repeat(1,300px)] gap-2 justify-center`}> {/** remember this shortcut */}
                 <div className={`bg-lightSky text-darkSky h-[200px] rounded-xl pt-16 `}>
                     <p className="text-center">Share Your Contact</p>
                     <FaPhone className="text-4xl mx-auto mb-2 mt-2"/>
@@ -43,7 +43,7 @@ export default function SellCarFormPage(){
             </div>
         <div className={`bg-white ml-0 w-screen rounded-xl mt-10 `}>
         <h1 className={`text-center mt-5 pt-5 text-navyBlue`}>UPLOAD DOCUMENTS AND IMAGES</h1>
-        <div className={` mt-5 pb-10 grid grid-cols-[repeat(3,300px)] gap-2 justify-center`}>
+        <div className={` mt-5 pb-10 sm:grid sm:grid-cols-[repeat(3,300px)]  grid grid-cols-[repeat(1,300px)] gap-2 justify-center`}>
             <div className={`bg-lightSky text-darkSky h-[300px] pl-5 rounded-xl pt-16  `}>
                       <div><FileUploaderOne/></div>     
                 </div>

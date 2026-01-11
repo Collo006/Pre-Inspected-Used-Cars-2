@@ -70,30 +70,30 @@ if(!data?.review)return <p>No car data is available</p>
 
 
     return(
-         <div className=" ml-10 w-[1600px] rounded-xl mt-5  ">
+         <div className=" sm:ml-10 sm:w-[1600px] w-screen sm:rounded-xl mt-5  ">
 
 
 
-          <div className="pt-10 w-[1600px] h-[300px] bg-skyBlue rounded-xl text-white text-center">
-             <h1 className={`text-5xl font-extrabold text-center ${ubuntuFont.className} `}>WHY PINUC?</h1>
-             <div className=" grid grid-cols-3 mt-4 text-center">
-                <div className="">
-                    <h2 className={`text-3xl ${sairaFont.className}`}>Transparent Pricing</h2>
+          <div className="pt-10  sm:w-[1600px] w-screen h-[300px] bg-skyBlue sm:rounded-xl text-white text-center  ">
+             <h1 className={`sm:text-5xl text-xl font-extrabold text-center ${ubuntuFont.className} `}>WHY PINUC?</h1>
+             <div className=" sm:grid sm:grid-cols-3 grid grid-cols-[175px_175px] sm:gap-0  mt-4 text-center ">
+                <div className=" ">
+                    <h2 className={`sm:text-3xl text-md ${sairaFont.className}`}>Transparent Pricing</h2>
                     <p>No surprise here, see how much you pay on cars you like</p>
                 </div>
-                                <div className="">
-                    <h2 className={`text-3xl ${sairaFont.className}`}>Transparent Pricing</h2>
+                                <div className="sm:ml-0  ">
+                    <h2 className={`sm:text-3xl text-md ${sairaFont.className}`}>Transparent Pricing</h2>
                     <p>No surprise here, see how much you pay on cars you like</p>
                 </div>
 
-                              <div className="">
-                    <h2 className={`text-3xl ${sairaFont.className}`}>Transparent Pricing</h2>
+                              <div className="invisible sm:visible ">
+                    <h2 className={`sm:text-3xl text-md ${sairaFont.className}`}>Transparent Pricing</h2>
                     <p>No surprise here, see how much you pay on cars you like</p>
                 </div>
 
              </div>
           </div>
-          <div className="pt-10 w-full">
+          <div className="pt-10  w-full hidden sm:block ">
             <div className="pl-5">
 
                 <h2 className={`text-center text-3xl text-darkSky ${sairaFont.className}`}>PINUC BUYERS AND SELLERS REVIEWS</h2>
@@ -108,8 +108,8 @@ if(!data?.review)return <p>No car data is available</p>
                         return(
                             <div key={slideIndex} className="shrink-0 w-full flex gap-5 px-6 mt-3 mb-6 " style={{flex: "0 0 100%"}}>
                             {commentsForThisSlide.map((comments)=>(
-                                <div key={comments.id} className={`relative bg-navyBlue p-8 rounded-xl skew-y-3 shadow-lg shadow-darkSky w-[350px] max-w-xl mx-auto text-darkSky ${josefinFont.className} `}>
-                                 <div className="pl-1 pt-3 skew-y-1">
+                                <div key={comments.id} className={`relative bg-navyBlue p-8  rounded-xl skew-y-3 shadow-lg shadow-darkSky w-[350px] max-w-xl mx-auto text-darkSky ${josefinFont.className} `}>
+                                 <div className="pl-1 pt-3 skew-y-1 text-sm">
                                     <p>{comments.name}</p>
                                     <p>{comments.comment}</p>                                    
                                  </div>

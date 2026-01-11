@@ -11,9 +11,9 @@ const deliusFont= Delius_Unicase({
 
 export default function Footer(){
     return (
-        <div className={`bg-skyBlue text-white mt-10 w-full ${deliusFont.className}`}>
+        <div className={`bg-skyBlue text-white mt-10 w-full  ${deliusFont.className}`}>
          <div className=" grid grid-cols-4 text-center leading-12 text-white">
-            <div className={`text-white ${deliusFont.className}`}>
+            <div className={`text-white  ${deliusFont.className}`}>
                 <h2>PRODUCTS</h2>
                 <p>USED CARS</p>
                 <p>SELL YOUR CAR</p>

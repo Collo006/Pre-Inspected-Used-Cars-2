@@ -119,7 +119,7 @@ const filteredCars = data.cars.filter((car)=>{
               )}
                 {filteredCars.map((car)=>(
                  
-                    <div  key={car.id} className={`bg-lightSky shadow-md rounded-lg sm:w-[20%] sm:min-w-[330px] w-[350px] sm:h-[330px] mb-5 cursor-pointer overflow-hidden  hover:shadow-lg transition duration-300` }>
+                    <div  key={car.id} className={`bg-lightSky shadow-md rounded-lg sm:w-[20%] sm:min-w-[330px] w-[350px] sm:h-[330px] mb-5 cursor-pointer overflow-hidden  hover:shadow-lg transition duration-300 items-center` }>
                         <Link key={car.id} href={`/cars/${car.id}`}>
                          <div className={`relative h-50`}>
                           <Image src={car.image} alt={car.model} fill className={`object-cover rounded-t-lg`}/>

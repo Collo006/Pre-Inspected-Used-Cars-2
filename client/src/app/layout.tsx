@@ -19,7 +19,7 @@ export default async function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden ">
       <Head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
       </Head>

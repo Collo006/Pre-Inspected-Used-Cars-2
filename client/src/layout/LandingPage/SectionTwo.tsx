@@ -65,6 +65,14 @@ export default function SectionTwo() {
     });
   }, [currentSlide, totalSlides, data]);
 
+  /*useEffect(()=>{
+        if(!data?.suv_pickups)return;
+        const interval= setInterval(()=>{
+            setCurrentSlide((prev)=>(prev+1)%totalSlides)
+        },100000); //This sets up a timer that runs every 5000 milliseconds (5 seconds).
+        return ()=> clearInterval(interval);// it ensures that there are no duplicate timers running at the same time preventing memory leaks and buggy behaviour
+    },[data,totalSlides]);//used to create the auto scroll effect*/
+
   if (loading) return <p className="text-center py-10">Loading cars...</p>;
   if (error)
     return (
@@ -79,10 +87,10 @@ export default function SectionTwo() {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <div className="mt-5 sm:ml-10 ml-0 py-10 bg-white sm:w-[1600px] w-full rounded-xl">
+    <div className="mt-5 sm:ml-0 ml-0 py-10 bg-white sm:w-screen w-full ">
       <section className="max-w-7xl mx-auto px-4 ">
         <h1
-          className={`sm:text-5xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}
+          className={`sm:text-2xl text-2xl text-darkSky font-bold text-center mb-10 ${exoFont.className}`}
         >
           SPECIAL CAR DEALS
         </h1>
@@ -150,7 +158,7 @@ export default function SectionTwo() {
                 >
                   {/* MOBILE LAYOUT - Single card centered */}
                   {isMobile ? (
-                    <div className="flex justify-center px-4">
+                    <div className="flex justify-center px-4 ml-6">
                       {carsForThisSlide.map((car) => (
                         <div
                           key={car.id}
@@ -193,7 +201,7 @@ export default function SectionTwo() {
                       {carsForThisSlide.map((car) => (
                         <div
                           key={car.id}
-                          className="bg-lightSky cursor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 w-[calc(20%-16px)] min-w-[200px] flex-shrink-0"
+                          className="bg-lightSky cursor-pointer rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 w-[calc(20%-16px)] min-w-[200px] shrink-0"
                         >
                           <Link key={car.id} href={`/SpecialCars/${car.id}`}>
                             <div className="relative h-52">
@@ -205,9 +213,9 @@ export default function SectionTwo() {
                               />
                             </div>
                           </Link>
-                          <div className="p-4 text-center">
+                          <div className="p-4 ">
                             <h3
-                              className={`text-lg mb-2 text-navyBlue text-bold ${josefinFont}`}
+                              className={`text-md mb-2 text-navyBlue text-bold ${josefinFont}`}
                             >
                               {car.model}
                             </h3>
@@ -217,7 +225,7 @@ export default function SectionTwo() {
                               <p>Year: {car.year}</p>
                               <p>Mileage: {car.mileage.toLocaleString()} miles</p>
                               <p
-                                className={`text-lg font-bold text-navyBlue ${josefinFont}`}
+                                className={`text-md font-bold text-navyBlue ${josefinFont}`}
                               >
                                 Ksh.{car.price.toLocaleString()}
                               </p>

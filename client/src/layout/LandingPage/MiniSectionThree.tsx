@@ -49,7 +49,7 @@ export default function ImageSlider() {
 
   return (
     <div
-      className="relative overflow-hidden sm:ml-10 sm:w-[1600px] w-screen sm:rounded-xl rounded-none mt-5 h-auto"
+      className="relative overflow-hidden sm:ml-0 sm:w-screen w-screen  mt-5 h-auto"
       style={{ height: 500 }}
     >
      
@@ -68,7 +68,7 @@ export default function ImageSlider() {
             src={src}
             alt={`Slide ${index + 1}`}
             fill
-            className="object-cover sm:rounded-xl"
+            className="object-cover "
             loading="eager"
           />
           <div className="absolute sm:top-3/4 top-1/2 sm:left-16 left-5 transform-translate-x-1/2 -translate-y-1/2 text-white text-center">

@@ -11,11 +11,11 @@ const deliusFont= Delius_Unicase({
 
 export default function Footer(){
     return (
-        <div className={`bg-skyBlue text-white mt-10 w-full  ${deliusFont.className}`}>
-         <div className=" grid grid-cols-4 text-center leading-12 text-white">
+        <div className={`bg-skyBlue text-white mt-10 sm:w-full w-screen  ${deliusFont.className}`}>
+         <div className=" grid grid-cols-4  text-center sm:text-md text-sm sm:leading-12 leading-11  text-white">
             <div className={`text-white  ${deliusFont.className}`}>
                 <h2>PRODUCTS</h2>
-                <p>USED CARS</p>
+                <p>USED CARS</p> 
                 <p>SELL YOUR CAR</p>
             </div>
            <div className={`text-white ${deliusFont.className}`}>
@@ -35,13 +35,13 @@ export default function Footer(){
                 <p>TEAM</p>
             </div>
          </div>
-           <div className="flex justify-center gap-4 pb-3 text-2xl text-white text-center cursor-pointer">
+           <div className="flex justify-center gap-4 pb-3 sm:text-lg text-sm text-white text-center cursor-pointer">
                <FaInstagram className="hover:text-[#d62976]"/>
               <FaFacebook className="hover:text-[#1877F2]"/>
                <FaTwitter className="hover:text-[#1DA1F2]" />
 <FaLinkedin className="hover:text-[#0077B5]"/>
            </div>
-           <div className={`text-center text-white ${deliusFont.className}`}>
+           <div className={`text-center text-white sm:text-md text-sm ${deliusFont.className}`}>
             <p> &copy; <sup>TM</sup> PINUC.All rights reserved. Vehicle photos PINUC images 2025</p>
            </div>
        

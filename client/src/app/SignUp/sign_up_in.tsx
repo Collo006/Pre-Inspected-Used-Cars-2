@@ -90,14 +90,14 @@ export default function SignUp(){
   };
 
     return(
-        <div className={` bg-cover bg-center bg-no-repeat`} >
+        <div className={` bg-cover bg-center bg-no-repeat `} >
                 <Image src="/images/PORSCHE-1.jpg" alt="Background" fill priority className="object-cover -z-10" />
           
-         <div className=" sm:w-[700px] sm:h-[600px] sm:mx-auto sm:pt-10 mx-auto pt-2">
-           <h1 className={`font-semi-bold text-xl sm:text-6xl sm:pb-10 pb-1 text-white text-center  ${ubuntuFont.className}`}>
+         <div className=" sm:w-[700px] sm:h-full sm:mx-auto sm:pt-2 mx-auto pt-2">
+           <h1 className={`font-semi-bold text-xl sm:text-5xl sm:pb-2 pb-1 text-white text-center  ${ubuntuFont.className}`}>
             SignUp to get the latest <br></br>update of available Cars
            </h1>
-           <p className={`sm:text-2xl text-md text-white mb-2 text-center ${exoFont.className}`}>
+           <p className={`sm:text-xl text-md text-white mb-2 text-center ${exoFont.className}`}>
             Create a Free PINUC Account to get the best car deals in Town.<br></br></p>
    {/**Error Display */}
    {error && (
@@ -114,17 +114,17 @@ export default function SignUp(){
                
            <form onSubmit={handleEmailAuth} className="border border-skyBlue/20 bg-white/10 backdrop-blur-md shadow-lg bg-clip-text sm:pl-7 pb-10 rounded-xl text-white sm:h-auto sm:w-auto w-[300px] sm:ml-0 ml-10">
               {!isSignIn && (
-            <div className=" pt-5 ">
+            <div className=" pt-1 ">
                 <label htmlFor="name" className={`pl-2 sm:text-lg text-sm ${sairaFont.className}`}> NAME</label>
                 <input id="name" name="name" type="text" className={`sm:w-[650px] sm:h-[50px] w-[285px] h-[30px] border border-gray-600 sm:ml-0 ml-1 pl-2 sm:text-lg text-sm rounded-xl ${sairaFontTwo.className}`} autoComplete="name" required={!isSignIn} value={name} onChange={(e)=> setName(e.target.value)} placeholder="Enter your Full name" />
             </div>
              )}
-            <div className=" pt-5 ">
+            <div className=" pt-1 ">
                 <label htmlFor="email" className={`pl-2 sm:text-lg text-sm ${sairaFont.className}`}> EMAIL</label>
                 <input id="email" name="email" type="email" autoComplete="email" required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter your email" className={`sm:w-[650px] sm:h-[50px] w-[285px] h-[30px] border border-gray-600 pl-2 sm:text-lg sm:ml-0 ml-1 text-sm rounded-xl ${sairaFontTwo.className}`} />
             </div>
 
-            <div className=" pt-5 ">
+            <div className=" pt-1 ">
                 <label htmlFor="password" className={`pl-2 sm:text-lg text-sm ${sairaFont.className}`}> PASSWORD</label>
                 <input id="password" name="password" type="password" autoComplete={isSignIn ? "current-password" : "new-password" } value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="Enter your Password"className={`sm:w-[650px] sm:h-[50px] w-[285px] h-[30px] border border-gray-600 pl-2 sm:text-lg sm:ml-o ml-1 text-sm rounded-xl ${sairaFontTwo.className}`} />
             </div>

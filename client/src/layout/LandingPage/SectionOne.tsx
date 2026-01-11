@@ -64,9 +64,9 @@ export default function SectionOne() {
   if (!data?.newarrivals) return <p>No cars to Display</p>
 
   return (
-    <div>
-      <div className={`mt-5 text-center text-2xl`}>
-        <h1  className={`${exoFont.className} sm:text-4xl text-darkSky  `}>NEW ARRIVALS</h1>
+    <div >
+      <div className={`mt-5 text-center text-xl`}>
+        <h1  className={`${exoFont.className} sm:text-2xl text-darkSky  `}>NEW ARRIVALS</h1>
         <p className={`${sairaFont.className} text-darkSky`}>Find Newly Posted Cars from approved sellers</p>
       </div>
       
@@ -95,16 +95,16 @@ export default function SectionOne() {
                 {/* Right Details */}
                 <div className={`flex flex-col justify-center sm:pl-6 pl-0 sm:w-[600px] w-[400px] sm:ml-28 sm:rounded-xl  text-darkSky h-full ${josefinFont.className}`}>
                   <div className="sm:-mt-20 -mt-46 -ml-6 text-center ">
-                    <p className="text-center text-2xl font-extrabold w-auto ">Price</p>
+                    <p className="text-center text-xl font-extrabold w-auto ">Price</p>
                     <p className="text-center">
-                      <span className="sm:text-6xl text-xl font-extrabold">KSH.{car.price}</span>
+                      <span className="sm:text-4xl text-xl font-extrabold">KSH.{car.price}</span>
                     </p>
                   </div>
                   
                   <div className="grid  grid-cols-2  sm:pl-10 pl-10 sm:ml-7 sm:mt-5 mt-1 gap-2 ">
                     <div className=" h-[50px] sm:h-[100px] text-center rounded-xl sm:pt-5 pt-0 bg-navyBlue">
                       <p className="text-lg w-auto pl-1 ">Model</p>
-                      <p><span className="sm:text-4xl text-lg font-extrabold">{car.model}</span></p>
+                      <p><span className="sm:text-2xl text-lg font-extrabold">{car.model}</span></p>
                     </div>
                     
                     <div className=" sm:w-[150px] w-[70px] text-center rounded-xl sm:pt-5 bg-navyBlue">
@@ -122,7 +122,7 @@ export default function SectionOne() {
                     <div className=" sm:-ml-24 -ml-7 sm:w-[247px] w-[100px] text-center rounded-xl bg-navyBlue">
                       <p className="pl-1 sm:text-lg text-md w-auto pt-1">Milage</p>
                       <p className="pl-1">
-                        <span className="sm:text-4xl text-md font-extrabold">{car.mileage}</span>
+                        <span className="sm:text-2xl text-md font-extrabold">{car.mileage} Km</span>
                       </p>
                     </div>
                   </div>

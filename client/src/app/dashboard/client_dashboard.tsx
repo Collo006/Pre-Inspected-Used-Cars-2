@@ -21,12 +21,12 @@ export default function UserDashBoard({session}:{session: Session}) {
  const user = session.user
 
   return (
-<div className=" w-auto">
+<div className=" w-screen">
     <Header></Header>
 
   <div className="">
     <div className="text-center mt-3 mb-2 ">
-    <p className= {`text-darkSky font-bold sm:text-3xl text-md ${deliusFont.className}`} >Welcome {user.name}! Let&apos;s find your Perfect Ride. </p>
+    <p className= {`text-darkSky font-bold sm:text-2xl text-md ${deliusFont.className}`} >Welcome {user.name}! Let&apos;s find your Perfect Ride. </p>
     </div>
 <ImageSlider/>
   </div>

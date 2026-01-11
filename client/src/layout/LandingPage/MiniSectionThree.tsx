@@ -49,7 +49,7 @@ export default function ImageSlider() {
 
   return (
     <div
-      className="relative overflow-hidden ml-10 w-[1600px] rounded-xl mt-5 h-auto"
+      className="relative overflow-hidden sm:ml-10 sm:w-[1600px] w-screen sm:rounded-xl rounded-none mt-5 h-auto"
       style={{ height: 500 }}
     >
      
@@ -68,11 +68,11 @@ export default function ImageSlider() {
             src={src}
             alt={`Slide ${index + 1}`}
             fill
-            className="object-cover rounded-xl"
+            className="object-cover sm:rounded-xl"
             loading="eager"
           />
-          <div className="absolute top-3/4 left-16 transform-translate-x-1/2 -translate-y-1/2 text-white text-center">
-           <p className={`text-5xl pt-20 text-white ${deliusFont.className}`}>{word}...</p>
+          <div className="absolute sm:top-3/4 top-1/2 sm:left-16 left-5 transform-translate-x-1/2 -translate-y-1/2 text-white text-center">
+           <p className={`sm:text-5xl text-2xl pt-20 text-white ${deliusFont.className}`}>{word}...</p>
           </div>
         </div>
           </div>

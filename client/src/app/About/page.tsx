@@ -52,36 +52,36 @@ export default function About(){
 
                       </div>
                 </div>
-            <h2 className={`${exoFont.className} text-2xl text-darkSky font-bold text-center pt-5`}>RECENT EXPERT REVIEWS</h2>
-            <div className={`bg-white ml-0 w-screen h-[600px] rounded-xl mt-10 grid grid-cols-3 gap-1`}>
+            <h2 className={`${exoFont.className} sm:text-2xl text-xl text-darkSky font-bold text-center pt-5`}>RECENT EXPERT REVIEWS</h2>
+            <div className={`bg-white ml-0 w-screen sm:h-[600px] h-auto rounded-xl mt-10 sm:grid sm:grid-cols-3 sm:gap-1 grid grid-cols-1`}>
                 <div className={`w-full `}>
-                    <div className={`relative w-full h-[400px]`}>
+                    <div className={`relative sm:w-full w-screen sm:h-[400px] h-[200px]`}>
                         <Image src="/images/mechanic.jpg" alt="mechanic" className={`object-cover rounded-t-lg`} fill/>
                     </div>
                      <div className={`p-2`}>
-                         <div className={`space-y-1 text-sm text-navyBlue `}>
-                            <p className={`space-y-1 text-md text-navyBlue ${sairaFont.className}`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was, but she knew with all her heart that it was true.It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it.</p>
+                         <div className={`space-y-1 text-navyBlue `}>
+                            <p className={`space-y-1 sm:text-md text-sm text-navyBlue ${sairaFont.className}`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was, but she knew with all her heart that it was true.It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it.</p>
                          </div>
                         </div>
                 </div>
                 <div className={`w-full `}>
-                    <div className={`relative w-full h-[400px]`}>
+                    <div className={`relative sm:w-full w-screen sm:h-[400px] h-[200px]`}>
                         <Image src="/images/oldies.jpg" alt="mechanic" className={`object-cover rounded-t-lg`} fill/>
                     </div>
                      <div className={`p-2`}>
-                         <div className={`space-y-1 text-sm text-navyBlue `}>
-                            <p className={`space-y-1 text-md text-navyBlue ${sairaFont.className}`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was, but she knew with all her heart that it was true.It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it.</p>
+                         <div className={`space-y-1  text-navyBlue `}>
+                            <p className={`space-y-1 sm:text-md text-sm  text-navyBlue ${sairaFont.className}`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was, but she knew with all her heart that it was true.It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it.</p>
                          </div>
                         </div>
 
                 </div>
                 <div className={`w-full `}>
-                    <div className={`relative w-full h-[400px]`}>
+                    <div className={`relative sm:w-full w-screen sm:h-[400px] h-[200px]`}>
                         <Image src="/images/amg.jpg" alt="mechanic" className={`object-cover rounded-t-lg`} fill/>
                     </div>
                      <div className={`p-2`}>
-                         <div className={`space-y-1 text-sm text-navyBlue `}>
-                            <p className={`space-y-1 text-md text-navyBlue ${sairaFont.className}`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was, but she knew with all her heart that it was true.It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it.</p>
+                         <div className={`space-y-1 text-navyBlue `}>
+                            <p className={`space-y-1 sm:text-md text-sm  text-navyBlue ${sairaFont.className}`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was, but she knew with all her heart that it was true.It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it.</p>
                          </div>
                         </div>
 

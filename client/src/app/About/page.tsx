@@ -88,19 +88,19 @@ export default function About(){
                 </div>
 
             </div>
-                <div className={` ml-1 w-screen h-[600px] rounded-xl mt-10 grid grid-cols-[2fr_1fr] gap-1`}>
-                      <div className={` w-full `}>
-                        <div className={`relative mx-auto w-full min-w-[400px] h-[600px]`}>
-                    <Image src="/images/g-wagon 2.jpg" alt="Background" className={`rounded-xl object-cover `} fill />
+                <div className={` sm:ml-1 w-screen h-[600px] sm:rounded-xl mt-10 sm:grid sm:grid-cols-[2fr_1fr] grid grid-cols-1 gap-1`}>
+                      <div className={` `}>
+                        <div className={`relative mx-auto sm:w-full min-w-[400px] sm:h-[600px] w-screen h-[200px]`}>
+                    <Image src="/images/g-wagon 2.jpg" alt="Background" className={`sm:rounded-xl object-cover `} fill />
                         </div>
 
                       </div>
 
                       <div className={`bg-white rounded-xl`}>
-                       <h1 className={`${exoFont.className} text-2xl text-darkSky font-bold text-center pt-5`}>BEST SELLING VEHICLE OF 2021 MERCEDES G-WAGON</h1>
-                       <p className={`text-md ${sairaFont.className} pt-5 pl-2 pr-2 text-navyBlue`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was,but she knew with all her heart that it was true. It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it. He sat staring at the person in the train stopped at the station going in the opposite direction. She sat staring ahead, never noticing that she was being watched. Both trains began to move and he knew that in another timeline or in another universe, they had been happy together.</p>
+                       <h1 className={`${exoFont.className} sm:text-2xl text-xl text-darkSky font-bold text-center pt-5`}>BEST SELLING VEHICLE OF 2021 MERCEDES G-WAGON</h1>
+                       <p className={`sm:text-md text-sm ${sairaFont.className} pt-5 pl-2 pr-2 text-navyBlue`}>There was something special about this little creature. Donna couldn&apos;t quite pinpoint what it was,but she knew with all her heart that it was true. It wasn&apos;t a matter of if she was going to try and save it, but a matter of how she was going to save it. He sat staring at the person in the train stopped at the station going in the opposite direction. She sat staring ahead, never noticing that she was being watched. Both trains began to move and he knew that in another timeline or in another universe, they had been happy together.</p>
                        
-              <Link href=""> <button className={`${exoFont.className} animate-pulse bg-newOrange text-white mt-2 pt-3 pb-3  rounded-xl text-md w-[150px] cursor-pointer`}>Learn More</button></Link>
+              <Link href=""> <button className={`${exoFont.className} animate-pulse bg-newOrange text-white mt-2 pt-3 pb-3  rounded-xl sm:text-md text-sm sm:w-[150px] w-[100px] cursor-pointer`}>Learn More</button></Link>
            
 
 
